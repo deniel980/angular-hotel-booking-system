@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="card">
+    <input type="text" class="form-control" [(ngModel)]="newBookTitle" placeholder="Book title"/>
+    <input type="text" class="form-control" [(ngModel)]="newBookAuthor" placeholder="Author name"/>
+    <button (click)="addBook()" class="btn btn-primary">Add Book</button>
+  </div>
+
+
+  <ul class="list-group row" *ngFor="let book of books; index as i">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      {{book.title}}
+      <button (click)="deleteBook(book.id)">Delete</button>
+    </li>
+  </ul>
+</div>
